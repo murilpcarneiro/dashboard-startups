@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Bar, BarChart, CartesianGrid, XAxis, YAxis, Tooltip, Legend } from 'recharts';
 import { processCsv } from '../processCsv/startupsCsv';
 
-const StartupsByState: React.FC = () => {
+const StartupsByState = () => {
   const [chartData, setChartData] = useState<{ state: string; count: number }[]>([]);
 
   useEffect(() => {

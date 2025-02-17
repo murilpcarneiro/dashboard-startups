@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Bar, ComposedChart, CartesianGrid, XAxis, YAxis, Tooltip, Legend } from 'recharts';
 import { processCsv } from '../processCsv/startupsCsv';
 
-const FundingByCategory: React.FC = () => {
+const FundingByCategory = () => {
   interface ChartData {
     category_code: string;
     funding_total_usd: number;

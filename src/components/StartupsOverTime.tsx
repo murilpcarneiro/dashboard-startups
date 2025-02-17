@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Bar, BarChart, CartesianGrid, XAxis, YAxis, Tooltip, Legend } from 'recharts';
 import { processCsv } from '../processCsv/startupsCsv';
 
-const StartupsOverTime: React.FC = () => {
+const StartupsOverTime = () => {
   const [foundedData, setFoundedData] = useState<{ year: number; count: number }[]>([]);
   const [closedData, setClosedData] = useState<{ year: number; count: number }[]>([]);
 
