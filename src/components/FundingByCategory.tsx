@@ -31,7 +31,7 @@ const FundingByCategory = () => {
   }, []);
 
   return (
-    <div>
+    <div className='flex flex-col justify-center items-center'>
       <h2 className="text-xl font-semibold mb-4">Distribuição do Total de Financiamento por Categoria</h2>
       <ComposedChart width={400} height={300} data={chartData}>
         <CartesianGrid strokeDasharray="3 3" stroke="#444" />

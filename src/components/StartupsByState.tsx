@@ -25,7 +25,7 @@ const StartupsByState = () => {
   }, []);
 
   return (
-    <div>
+    <div className='flex flex-col justify-center items-center'>
       <h2 className="text-xl font-semibold mb-4">Distribuição de Startups por Estado</h2>
       <BarChart width={400} height={300} data={chartData}>
         <CartesianGrid strokeDasharray="3 3" stroke="#444" />

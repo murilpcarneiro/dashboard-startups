@@ -38,7 +38,7 @@ const StartupsOverTime = () => {
   }, []);
 
   return (
-    <div className='flex'>
+    <div className='flex justify-between'>
       <div className='mr-8'>
         <h2 className="text-xl font-semibold mb-4">Número de Startups Fundadas ao Longo do Tempo</h2>
         <BarChart width={400} height={300} data={foundedData}>
