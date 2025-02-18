@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Bar, ComposedChart, CartesianGrid, XAxis, YAxis, Tooltip, Legend } from 'recharts';
+import { Bar, ComposedChart, CartesianGrid, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { processCsv } from '../processCsv/startupsCsv';
 
 const FundingByCategory = () => {
@@ -31,16 +31,18 @@ const FundingByCategory = () => {
   }, []);
 
   return (
-    <div className='flex flex-col justify-center items-center'>
-      <h2 className="text-xl font-semibold mb-4">Distribuição do Total de Financiamento por Categoria</h2>
-      <ComposedChart width={400} height={300} data={chartData}>
-        <CartesianGrid strokeDasharray="3 3" stroke="#444" />
-        <XAxis dataKey="category_code" stroke="#e4e4e7" />
-        <YAxis stroke="#e4e4e7" tickFormatter={(value) => parseFloat(value) / 1000000000 + " billion"} />
-        <Tooltip contentStyle={{ backgroundColor: '#2a2a3d', borderColor: '#444' }} />
-        <Legend />
-        <Bar dataKey="funding_total_usd" fill="#8884d8" />
-      </ComposedChart>
+    <div className="w-full h-full">
+      <h2 className="text-lg md:text-xl font-semibold mb-4">Distribuição do Total de Financiamento por Categoria</h2>
+      <ResponsiveContainer width="100%" height={300}>
+        <ComposedChart data={chartData}>
+          <CartesianGrid strokeDasharray="3 3" stroke="#444" />
+          <XAxis dataKey="category_code" stroke="#e4e4e7" />
+          <YAxis stroke="#e4e4e7" tickFormatter={(value) => parseFloat(value) / 1000000000 + " billion"} />
+          <Tooltip contentStyle={{ backgroundColor: '#2a2a3d', borderColor: '#444' }} />
+          <Legend />
+          <Bar dataKey="funding_total_usd" fill="#8884d8" />
+        </ComposedChart>
+      </ResponsiveContainer>
     </div>
   );
 };

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Bar, BarChart, CartesianGrid, XAxis, YAxis, Tooltip, Legend } from 'recharts';
+import { Bar, BarChart, CartesianGrid, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { processCsv } from '../processCsv/startupsCsv';
 
 const StartupsOverTime = () => {
@@ -38,10 +38,10 @@ const StartupsOverTime = () => {
   }, []);
 
   return (
-    <div className='flex justify-between'>
-      <div className='mr-8'>
-        <h2 className="text-xl font-semibold mb-4">Número de Startups Fundadas ao Longo do Tempo</h2>
-        <BarChart width={400} height={300} data={foundedData}>
+    <div className="w-full h-full">
+      <h2 className="text-lg md:text-xl font-semibold mb-4">Número de Startups Fundadas e Fechadas ao Longo do Tempo</h2>
+      <ResponsiveContainer width="100%" height={300}>
+        <BarChart data={foundedData}>
           <CartesianGrid strokeDasharray="3 3" stroke="#444" />
           <XAxis dataKey="year" stroke="#e4e4e7" />
           <YAxis stroke="#e4e4e7" />
@@ -49,10 +49,9 @@ const StartupsOverTime = () => {
           <Legend />
           <Bar dataKey="count" fill="#82ca9d" />
         </BarChart>
-      </div>
-      <div className='ml-8'>
-        <h2 className="text-xl font-semibold mb-4">Número de Startups Fechadas ao Longo do Tempo</h2>
-        <BarChart width={400} height={300} data={closedData}>
+      </ResponsiveContainer>
+      <ResponsiveContainer width="100%" height={300}>
+        <BarChart data={closedData}>
           <CartesianGrid strokeDasharray="3 3" stroke="#444" />
           <XAxis dataKey="year" stroke="#e4e4e7" />
           <YAxis stroke="#e4e4e7" />
@@ -60,7 +59,7 @@ const StartupsOverTime = () => {
           <Legend />
           <Bar dataKey="count" fill="#ff7300" />
         </BarChart>
-      </div>
+      </ResponsiveContainer>
     </div>
   );
 };
