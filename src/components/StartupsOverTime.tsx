@@ -39,7 +39,7 @@ const StartupsOverTime = () => {
 
   return (
     <div className="w-full h-full">
-      <h2 className="text-lg md:text-xl font-semibold mb-4">Número de Startups Fundadas e Fechadas ao Longo do Tempo</h2>
+      <h2 className="text-lg md:text-xl font-semibold mb-4">Número de Startups Fundadas ao Longo do Tempo</h2>
       <ResponsiveContainer width="100%" height={300}>
         <BarChart data={foundedData}>
           <CartesianGrid strokeDasharray="3 3" stroke="#444" />
@@ -50,6 +50,7 @@ const StartupsOverTime = () => {
           <Bar dataKey="count" fill="#82ca9d" />
         </BarChart>
       </ResponsiveContainer>
+      <h2 className="text-lg md:text-xl font-semibold mb-4">Número de Startups Fechadas ao Longo do Tempo</h2>
       <ResponsiveContainer width="100%" height={300}>
         <BarChart data={closedData}>
           <CartesianGrid strokeDasharray="3 3" stroke="#444" />
