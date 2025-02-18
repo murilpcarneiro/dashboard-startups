@@ -1,10 +1,11 @@
 # Dashboard de Startups
 
-## Deploy da Aplicação
 
-- https://dashboard-startups.vercel.app/
 
 Este projeto é um dashboard interativo desenvolvido com React, TypeScript e Vite. Ele exibe informações sobre startups, incluindo a distribuição de startups por estado, o número de startups fundadas e fechadas ao longo do tempo, e a distribuição do total de financiamento por categoria.
+
+## Deploy da Aplicação
+- https://dashboard-startups.vercel.app/
 
 ## Tecnologias Utilizadas
 
